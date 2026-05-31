@@ -1,0 +1,178 @@
+/* PREMIUM MODERN BRAND VARIABLES */
+:root {
+    --primary: #FFB300;       /* Industrial Amber/Yellow */
+    --primary-hover: #E09E00;
+    --dark-bg: #121212;      /* Pure Charcoal Dark */
+    --dark-surface: #1E1E1E; /* Card surface in dark theme */
+    --light-bg: #F8F9FA;     /* Premium Light Slate */
+    --light-surface: #FFFFFF;
+    --text-main-dark: #FFFFFF;
+    --text-muted-dark: #B3B3B3;
+    --text-main-light: #212529;
+    --text-muted-light: #6C757D;
+    --border-color: rgba(0,0,0,0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* GLOBAL THEME DEFAULTS */
+body.light-mode {
+    --bg-current: var(--light-bg);
+    --surface-current: var(--light-surface);
+    --text-current: var(--text-main-light);
+    --text-muted: var(--text-muted-light);
+}
+
+body.dark-mode {
+    --bg-current: var(--dark-bg);
+    --surface-current: var(--dark-surface);
+    --text-current: var(--text-main-dark);
+    --text-muted: var(--text-muted-dark);
+    --border-color: rgba(255,255,255,0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-current);
+    color: var(--text-current);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+/* NAVBAR & LAYOUT STRUCTURE */
+header {
+    background-color: var(--surface-current);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--text-current);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+/* HERO SECTION CSS */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* UI UTILITIES - CARDS & CONTAINERS */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--surface-current);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    border-color: var(--primary);
+}
+
+/* ACCESSIBLE BUTTONS & INTERACTION */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #121212;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+/* FOOTER & ACCENTS */
+footer {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 4px solid var(--primary);
+}
+
+/* RESPONSIVE BREAKPOINTS (Mobile First Rules Override) */
+@media (max-width: 768px) {
+    .nav-menu { display: none; } /* Standard Mobile implementation requires toggle */
+    .hero h1 { font-size: 32px; }
+}
